@@ -2,168 +2,159 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>PontyNekoloti • Digital Creator</title>
+  <title>PONTYNEKOLOTI • DIGITAL</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-color: #000;
-      --text-color: #fff;
+      --bg: #000;
+      --text: #fff;
     }
-
     [data-theme="light"] {
-      --bg-color: #fff;
-      --text-color: #000;
+      --bg: #fff;
+      --text: #000;
     }
-
     body {
       margin: 0;
+      background: var(--bg);
+      color: var(--text);
       font-family: 'Press Start 2P', monospace;
-      background: var(--bg-color);
-      color: var(--text-color);
-      overflow-x: hidden;
       transition: background 0.3s, color 0.3s;
     }
-
     header {
-      background: var(--bg-color);
-      padding: 20px;
-      border-bottom: 1px solid var(--text-color);
       position: sticky;
-      top: 0;
+      top: 0; left: 0; right: 0;
+      background: var(--bg);
       z-index: 10;
+      border-bottom: 1px solid var(--text);
+      padding: 16px 0;
     }
-
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: var(--text-color);
-      font-size: 12px;
-    }
-
+    nav { display: flex; justify-content: center; gap: 32px; }
+    nav a { color: var(--text); text-decoration: none; font-size: 13px; letter-spacing: 1px;}
     .marquee {
-      font-size: 32px;
-      white-space: nowrap;
-      overflow: hidden;
-      border-bottom: 1px solid var(--text-color);
-      background: var(--bg-color);
-      position: relative;
-      height: 70px;
+      font-size: 38px;
+      padding: 26px 0 18px 0;
+      border-bottom: 1px solid var(--text);
+      overflow: hidden; white-space: nowrap;
+      position: relative; background: var(--bg);
     }
-
     .marquee-content {
-      position: absolute;
-      will-change: transform;
       display: inline-block;
-      padding-left: 100%;
-      animation: scroll-left 20s linear infinite;
+      animation: scroll 17s linear infinite;
+      will-change: transform;
     }
-
-    @keyframes scroll-left {
-      from { transform: translateX(0); }
-      to { transform: translateX(-100%); }
+    @keyframes scroll {
+      0% { transform: translateX(0);}
+      100% { transform: translateX(-50%);}
     }
-
     section {
-      perspective: 1000px;
-      transform-style: preserve-3d;
-      max-width: 900px;
+      max-width: 850px;
       margin: auto;
-      padding: 80px 20px;
+      padding: 54px 18px 30px 18px;
+      perspective: 1000px;
     }
-
-    .content {
-      transform: rotateX(0deg);
-      transition: transform 0.5s ease-out;
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px 10px;
-      font-size: 10px;
-      color: #999;
-    }
-
+    h2 { font-size: 19px; letter-spacing: 2px; margin-top: 0; }
+    ul { padding-left: 0; }
+    .content { font-size: 16px; line-height: 1.8; margin-bottom: 36px;}
+    .service-list li { margin-bottom: 14px; }
+    .prices-table { width:100%; border-collapse: collapse; margin-top:24px;}
+    .prices-table th, .prices-table td { border: 1px solid var(--text); padding: 10px 8px; text-align: left; font-size:15px;}
     .theme-toggle {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: none;
-      border: 1px solid var(--text-color);
-      color: var(--text-color);
-      padding: 5px 10px;
-      cursor: pointer;
-      font-family: inherit;
-      z-index: 20;
+      position: fixed; top: 20px; right: 20px;
+      border: 1px solid var(--text); background: none;
+      color: var(--text); padding: 7px 14px;
+      cursor: pointer; font-family: inherit; font-size:14px; z-index: 22;
+    }
+    a { color: var(--text);}
+    footer { text-align:center; padding:34px 0 16px 0; font-size:13px; color:#aaa;}
+    @media (max-width:700px) {
+      .marquee { font-size: 20px; }
+      h2 { font-size:15px;}
+      section { padding: 36px 5vw 24px 5vw;}
+      .theme-toggle { padding: 5px 7px; font-size:12px;}
+      .prices-table th,.prices-table td { font-size: 12px;}
     }
   </style>
 </head>
 <body>
-
 <header>
   <nav>
     <a href="#about">Обо мне</a>
-    <a href="#work">Проекты</a>
+    <a href="#services">Услуги</a>
+    <a href="#prices">Цены</a>
     <a href="#contact">Контакты</a>
   </nav>
 </header>
-
 <div class="marquee">
   <div class="marquee-content">
-    PONTYNEKOLOTI · DIGITAL CREATOR · AI ADS · BRANDING · STRATEGY · GAMES · WEB · TG · STYLE · PONTYNEKOLOTI · DIGITAL CREATOR · AI ADS · BRANDING · STRATEGY · GAMES · WEB · TG · STYLE ·
+    PONTYNEKOLOTI • DIGITAL STRATEGY • AI ADS • SMM • КОНТЕНТ • ТГ БОТЫ • РЕКЛАМА • ПРОДЮСИРОВАНИЕ • САЙТЫ • ВИЗУАЛ • DIGITAL ПРОДУКТЫ • КОММУНИКАЦИЯ •  PONTYNEKOLOTI • DIGITAL STRATEGY • AI ADS • SMM • КОНТЕНТ • ТГ БОТЫ • РЕКЛАМА • ПРОДЮСИРОВАНИЕ • САЙТЫ • ВИЗУАЛ • DIGITAL ПРОДУКТЫ • КОММУНИКАЦИЯ • 
   </div>
 </div>
-
 <button class="theme-toggle" onclick="toggleTheme()">Сменить тему</button>
 
 <section id="about">
   <div class="content">
     <h2>ОБО МНЕ</h2>
-    <p>Создаю продукты, которые не нуждаются в объяснении. Уверен, что стиль — это не внешний эффект, а внутренняя собранность. Маркетолог в РТК, бренд-стратег, медиа-дизайнер, автор Telegram-канала с экспериментальным форматом. Делаю всё: от идей до реализации. Работаю с текстом, визуалом, кодом и культурой. Не выношу визуального шума и банальности.</p>
+    <p>Я занимаюсь всем в сфере digital: от идеи и креатива до полного запуска. Могу собрать вам канал, продюсировать инфлюенсера, запустить рекламу, сделать бренд-платформу, придумать фирменный стиль и продвинуть проект через контент и нативные инструменты. Вижу тренды до того, как они становятся мейнстримом. Креатив, продакшн, стратегия, автоматизация — всё под одной крышой.</p>
+    <p>Работал с крупными брендами, запускал собственные продукты, веду Telegram-канал, продвигаю электронику в РТК (дочка МТС), делаю игры, ботов, лендинги. Умею не только говорить, но и делать.</p>
+    <p>Стандартные инфлюенсерские ставки по рынку (2025):</p>
+    <table class="prices-table">
+      <tr><th>Услуга</th><th>Средняя цена (₽)</th></tr>
+      <tr><td>Рекламный пост в Telegram</td><td>30 000 – 120 000</td></tr>
+      <tr><td>Ведение Telegram-канала (мес.)</td><td>40 000 – 150 000</td></tr>
+      <tr><td>Продюсирование эксперта (мес.)</td><td>60 000 – 200 000</td></tr>
+      <tr><td>Контент-план / стратегия</td><td>от 20 000</td></tr>
+      <tr><td>Запуск таргетированной рекламы</td><td>от 20 000</td></tr>
+      <tr><td>Разработка мини-бота Telegram</td><td>30 000 – 90 000</td></tr>
+      <tr><td>Создание лендинга</td><td>от 40 000</td></tr>
+      <tr><td>Комплексное продвижение</td><td>от 100 000</td></tr>
+    </table>
   </div>
 </section>
 
-<section id="work">
+<section id="services">
   <div class="content">
-    <h2>ПРОЕКТЫ</h2>
-    <p><strong>Telegram-канал</strong>: авторская площадка о стиле, брендах, рекламе и технологиях. Контент-план, как редакционная машина. Цель — 100K органических подписчиков к 2026.</p>
-    <p><strong>AI ADS & Боты</strong>: миниприложения и Telegram-боты, автоматизирующие гейминг, маркетинг и вовлечение. От игр до утилит, от концепции до запуска.</p>
-    <p><strong>ICENAKE / JUMPMAN RETRO</strong>: неоновые аркады с 8-битной эстетикой, спецэффектами и кастомным UI. Всё — внутри Telegram.</p>
+    <h2>УСЛУГИ</h2>
+    <ul class="service-list">
+      <li>— Продюсирование инфлюенсеров, каналов, брендов</li>
+      <li>— Ведение Telegram и разработка контент-стратегий</li>
+      <li>— Запуск и оптимизация рекламы (AI ADS, SMM, таргет)</li>
+      <li>— Дизайн и создание фирменного стиля</li>
+      <li>— Разработка Telegram-ботов, мини-приложений</li>
+      <li>— Создание digital-продуктов и лендингов</li>
+      <li>— Креатив, видео/фото-продакшн, копирайтинг</li>
+      <li>— Бренд-платформы и коммуникационные стратегии</li>
+      <li>— Аудит и перезапуск проектов под новые тренды</li>
+    </ul>
+  </div>
+</section>
+
+<section id="prices">
+  <div class="content">
+    <h2>СТОИМОСТЬ</h2>
+    <p>Финальный бюджет обсуждается персонально — зависит от задачи, сроков, уровня вовлечённости, амбиций бренда и личной химии.</p>
+    <p>Плачу не количеством часов, а качеством результата.</p>
   </div>
 </section>
 
 <section id="contact">
   <div class="content">
     <h2>КОНТАКТЫ</h2>
-    <p><a href="https://t.me/pontynekolotite" target="_blank">Telegram: @pontynekolotite</a></p>
-    <p>Email: <a href="mailto:ponty@nekoloti.com">ponty@nekoloti.com</a></p>
-    <p>Телефон: <a href="tel:+7968853888">+7 968 853 888</a></p>
+    <p><a href=\"https://t.me/pontynekolotite\" target=\"_blank\">Telegram: @pontynekolotite</a></p>
+    <p>Email: <a href=\"mailto:ponty@nekoloti.com\">ponty@nekoloti.com</a></p>
+    <p>Телефон: <a href=\"tel:+7968853888\">+7 968 853 888</a></p>
   </div>
 </section>
 
 <footer>
-  © 2025 PontyNekoloti
+  © 2025 PontyNekoloti. Digital with no limits.
 </footer>
 
 <script>
   function toggleTheme() {
-    const theme = document.documentElement.getAttribute("data-theme");
-    document.documentElement.setAttribute("data-theme", theme === "light" ? "dark" : "light");
+    const theme = document.documentElement.getAttribute(\"data-theme\");
+    document.documentElement.setAttribute(\"data-theme\", theme === \"light\" ? \"dark\" : \"light\");
   }
-
-  window.addEventListener("scroll", () => {
-    document.querySelectorAll('.content').forEach(el => {
-      const rect = el.getBoundingClientRect();
-      const angle = (rect.top - window.innerHeight/2) / 20;
-      el.style.transform = `rotateX(${angle}deg)`;
-    });
-  });
 </script>
-
 </body>
 </html>
