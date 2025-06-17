@@ -9,13 +9,13 @@
     :root {
       --bg-color: #000;
       --text-color: #fff;
+      --ice-accent: #aeeaff;
     }
-
     [data-theme="light"] {
       --bg-color: #fff;
       --text-color: #000;
+      --ice-accent: #3ac5e5;
     }
-
     body {
       margin: 0;
       font-family: 'Press Start 2P', monospace;
@@ -24,51 +24,70 @@
       overflow-x: hidden;
       transition: background 0.3s, color 0.3s;
     }
-
     header {
       background: var(--bg-color);
-      padding: 20px;
-      border-bottom: 1px solid var(--text-color);
-      position: sticky;
-      top: 0;
+      padding: 30px 0 10px 0;
+      text-align: center;
+      border-bottom: 0;
       z-index: 10;
     }
-
+    .logo-img {
+      max-width: 500px;
+      width: 90vw;
+      height: auto;
+      display: block;
+      margin: 0 auto 16px auto;
+      filter: drop-shadow(0 0 16px var(--ice-accent));
+    }
     nav {
       display: flex;
       justify-content: center;
       gap: 40px;
+      margin-bottom: 8px;
     }
-
     nav a {
       text-decoration: none;
+      color: var(--ice-accent);
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    nav a:hover {
       color: var(--text-color);
-      font-size: 12px;
     }
-
     .marquee {
-      font-size: 32px;
-      white-space: nowrap;
-      overflow: hidden;
-      border-bottom: 1px solid var(--text-color);
+      font-size: 60px;
+      line-height: 1;
+      font-weight: bold;
+      height: 120px;
       background: var(--bg-color);
+      color: var(--text-color);
+      border-bottom: 2px solid var(--ice-accent);
+      overflow: hidden;
       position: relative;
-      height: 70px;
+      box-shadow: 0 3px 40px 0 var(--ice-accent, #aeeaff25);
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
-
     .marquee-content {
       position: absolute;
       will-change: transform;
       display: inline-block;
-      padding-left: 100%;
-      animation: scroll-left 20s linear infinite;
+      padding-left: 100vw;
+      white-space: nowrap;
+      animation: scroll-left 24s linear infinite;
+      font-family: 'Press Start 2P', monospace;
+      color: var(--ice-accent);
+      text-shadow: 0 2px 24px #aeeaff55;
     }
-
     @keyframes scroll-left {
       from { transform: translateX(0); }
-      to { transform: translateX(-100%); }
+      to { transform: translateX(-50%); }
     }
-
+    .marquee-content span {
+      margin: 0 44px 0 0;
+      vertical-align: middle;
+      display: inline-block;
+    }
     section {
       perspective: 1000px;
       transform-style: preserve-3d;
@@ -76,36 +95,48 @@
       margin: auto;
       padding: 80px 20px;
     }
-
     .content {
       transform: rotateX(0deg);
       transition: transform 0.5s ease-out;
     }
-
     footer {
       text-align: center;
       padding: 40px 10px;
-      font-size: 10px;
+      font-size: 12px;
       color: #999;
+      letter-spacing: 2px;
     }
-
     .theme-toggle {
       position: fixed;
       top: 20px;
       right: 20px;
       background: none;
-      border: 1px solid var(--text-color);
-      color: var(--text-color);
+      border: 1px solid var(--ice-accent);
+      color: var(--ice-accent);
       padding: 5px 10px;
       cursor: pointer;
       font-family: inherit;
+      font-size: 13px;
+      border-radius: 8px;
       z-index: 20;
+      transition: background 0.2s, color 0.2s;
+    }
+    .theme-toggle:hover {
+      background: var(--ice-accent);
+      color: var(--bg-color);
+    }
+    @media (max-width: 700px) {
+      .marquee { font-size: 28px; height: 70px;}
+      section { padding: 40px 8px; }
+      nav { gap: 18px; }
+      .logo-img { max-width: 90vw; }
     }
   </style>
 </head>
 <body>
 
 <header>
+  <img class="logo-img" src="/mnt/data/B69EEF9F-3434-4FCC-92A3-276F7F623632 2.PNG" alt="pontynekoloti логотип">
   <nav>
     <a href="#about">Обо мне</a>
     <a href="#work">Проекты</a>
@@ -115,7 +146,8 @@
 
 <div class="marquee">
   <div class="marquee-content">
-    PONTYNEKOLOTI · DIGITAL CREATOR · AI ADS · BRANDING · STRATEGY · GAMES · WEB · TG · STYLE · PONTYNEKOLOTI · DIGITAL CREATOR · AI ADS · BRANDING · STRATEGY · GAMES · WEB · TG · STYLE ·
+    <span>MARKETING</span> · <span>AI</span> · <span>ADS</span> · <span>DESIGN</span> · <span>BRANDING</span> · <span>WEB</span> · <span>SMM</span> · <span>CONTENT</span> · <span>STRATEGY</span> · <span>TG</span> · <span>STYLE</span> · <span>PRODUCT</span> · <span>ponty@nekoloti.com</span> · <span>+7 968 853 888</span> · 
+    <span>MARKETING</span> · <span>AI</span> · <span>ADS</span> · <span>DESIGN</span> · <span>BRANDING</span> · <span>WEB</span> · <span>SMM</span> · <span>CONTENT</span> · <span>STRATEGY</span> · <span>TG</span> · <span>STYLE</span> · <span>PRODUCT</span> · <span>ponty@nekoloti.com</span> · <span>+7 968 853 888</span> · 
   </div>
 </div>
 
@@ -155,7 +187,6 @@
     const theme = document.documentElement.getAttribute("data-theme");
     document.documentElement.setAttribute("data-theme", theme === "light" ? "dark" : "light");
   }
-
   window.addEventListener("scroll", () => {
     document.querySelectorAll('.content').forEach(el => {
       const rect = el.getBoundingClientRect();
@@ -164,6 +195,5 @@
     });
   });
 </script>
-
 </body>
 </html>
