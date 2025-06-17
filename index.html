@@ -46,22 +46,27 @@
       font-size: 12px;
     }
 
-    .marquee-container {
-      width: 100%;
+    .marquee {
+      font-size: 32px;
+      white-space: nowrap;
       overflow: hidden;
       border-bottom: 1px solid var(--text-color);
       background: var(--bg-color);
+      position: relative;
+      height: 70px;
     }
 
-    .marquee-svg {
-      display: block;
-      width: 200%;
+    .marquee-content {
+      position: absolute;
+      will-change: transform;
+      display: inline-block;
+      padding-left: 100%;
       animation: scroll-left 20s linear infinite;
     }
 
     @keyframes scroll-left {
       from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
+      to { transform: translateX(-100%); }
     }
 
     section {
@@ -108,12 +113,10 @@
   </nav>
 </header>
 
-<div class="marquee-container">
-  <svg class="marquee-svg" height="80" viewBox="0 0 2000 80" xmlns="http://www.w3.org/2000/svg">
-    <text x="0" y="50" font-family="'Press Start 2P', monospace" font-size="28" fill="currentColor">
-      PONTYNEKOLOTI · DIGITAL CREATOR · AI ADS · BRANDING · STRATEGY · GAMES · WEB · TG · STYLE · PONTYNEKOLOTI · DIGITAL CREATOR · AI ADS · BRANDING · STRATEGY · GAMES · WEB · TG · STYLE ·
-    </text>
-  </svg>
+<div class="marquee">
+  <div class="marquee-content">
+    PONTYNEKOLOTI · DIGITAL CREATOR · AI ADS · BRANDING · STRATEGY · GAMES · WEB · TG · STYLE · PONTYNEKOLOTI · DIGITAL CREATOR · AI ADS · BRANDING · STRATEGY · GAMES · WEB · TG · STYLE ·
+  </div>
 </div>
 
 <button class="theme-toggle" onclick="toggleTheme()">Сменить тему</button>
